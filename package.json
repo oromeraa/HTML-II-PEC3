@@ -15,7 +15,7 @@
     "web": {
       "context": "browser",
       "publicUrl": "./",
-      "source": "src/index.html",
+      "source": "src/home.html",
       "engines": {
         "browsers": "last 2 versions, > 0.5%, not dead"
       }
@@ -43,5 +43,10 @@
     "posthtml-include": "^2.0.1",
     "rimraf": "^6.1.2",
     "sharp": "^0.33.5"
+  },
+  "dependencies": {
+    "@fontsource/ubuntu": "^5.2.8",
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "bootstrap": "^5.3.8"
   }
 }

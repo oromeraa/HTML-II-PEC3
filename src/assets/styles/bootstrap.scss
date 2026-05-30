@@ -1,0 +1,34 @@
+/**
+ * Entry point for Bootstrap-based pages (home, speakers, article).
+ * Do not include SCSS code in this file — only imports.
+ */
+
+@layer reset, bootstrap, base, layout, views, components, pages, utilities;
+
+@layer reset {
+  @import "bootstrap/base/reset";
+}
+
+@layer bootstrap {
+  @import "bootstrap/abstracts/bootstrap-overwrites";
+  @import "/node_modules/bootstrap/scss/bootstrap";
+}
+
+@layer base {
+  @import "bootstrap/abstracts/fonts";
+  @import "bootstrap/base/base";
+}
+
+@layer views {
+  @import "bootstrap/views/header";
+  @import "bootstrap/views/footer";
+}
+
+@layer components {
+}
+
+@layer pages {
+  @import "bootstrap/pages/home";
+  @import "bootstrap/pages/article";
+  @import "bootstrap/pages/speakers";
+}

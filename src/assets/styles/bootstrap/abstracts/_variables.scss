@@ -1,0 +1,40 @@
+/*------------------------------------*\
+  # Global variables
+\*------------------------------------*/
+
+@use "sass:color";
+
+// Tipografía
+$font-family-ubuntu: "Ubuntu", sans-serif;
+$font-leonesa: "LeonesaCancilleresca", serif;
+
+// Paleta del escudo de Sabero
+$sabero-blue: #0071bc;
+$sabero-green: #008f4c;
+$sabero-gray: #e5e5e5;
+$sabero-gold: #eac102;
+$sabero-red: #ed1c24;
+$sabero-black: #000;
+
+// Colores derivados
+$navbar-bg: color.adjust($sabero-black, $alpha: -.1);
+$card-bg: color.adjust($sabero-black, $alpha: -.9);
+$shadow-color: color.adjust($sabero-black, $alpha: -.5);
+$color-primary: $sabero-green;
+$color-gray-mid: color.mix($sabero-black, $sabero-gray, 60%);
+
+// Bordes y radios
+$radius: 1rem;
+$border-radius-card: $radius;
+
+// Espaciado de retículas
+$grid-gap: 1.5rem;
+
+// Breakpoint clásico (cabecera)
+$mqMinTablet: 768px;
+
+// Breakpoints de container queries
+$cqSmall: 600px;
+$cqMedium: 900px;
+$cqCardNarrow: 240px;
+$cqCardWide: 400px;
