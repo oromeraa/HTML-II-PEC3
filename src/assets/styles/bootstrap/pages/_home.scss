@@ -1,13 +1,11 @@
 /*------------------------------------*\
   # Home page
 \*------------------------------------*/
-.home {
-  header {
-    background-color: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+
+@use "../abstracts/variables" as *;
+
+.home header {
+  .logo__text {
+    color: $sabero-gray;
   }
 }
