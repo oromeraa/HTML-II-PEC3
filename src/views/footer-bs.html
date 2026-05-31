@@ -1,52 +1,65 @@
-<footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-    <div class="site-footer__contact">
-      <p>
-        <i class="fa-solid fa-envelope"></i> info@jornadas-artesania.es ·
-        <i class="fa-solid fa-phone"></i> +34 987 000 000
-      </p>
-    </div>
-
-    <div class="d-flex flex-row">
-      <include src="./components/logo-bs.html"></include>
-      <nav class="navbar">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" href="./home.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./article-bs.html"
-              ><i class="fa-brands fa-bootstrap"></i> La jornada</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./speakers-bs.html"
-              ><i class="fa-brands fa-bootstrap"></i> Artesanos</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./article-tw.html"
-              ><i class="fa-brands fa-tailwind-css"></i> La jornada</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./speakers-tw.html"
-              ><i class="fa-brands fa-tailwind-css"></i> Artesanos</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./contestants-ai.html"
-              ><i class="fa-solid fa-robot"></i> Concursantes</a
-            >
-          </li>
-        </ul>
-      </nav>
-
-      <div class="social-links">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-      </div>
-    </div>
+<div
+  class="container-xxl d-flex flex-column justify-content-center align-items-center"
+>
+  <div class="py-5">
+    <p>
+      <i class="fa-solid fa-envelope"></i> info@jornadas-artesania.es ·
+      <i class="fa-solid fa-phone"></i> +34 987 000 000
+    </p>
   </div>
-</footer>
+
+  <div
+    class="w-100 row align-items-center border-top border-2 border-secondary py-3"
+  >
+    <div
+      class="col-12 col-lg d-flex justify-content-center justify-content-lg-start"
+    >
+      <include src="./components/logo-bs.html"></include>
+    </div>
+    <nav class="navbar col-12 col-lg-auto d-flex justify-content-center">
+      <ul
+        class="navbar-nav d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center"
+      >
+        <li class="nav-item">
+          <a class="nav-link" href="./article-bs.html"
+            ><i class="fa-brands fa-bootstrap"></i> La jornada</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./speakers-bs.html"
+            ><i class="fa-brands fa-bootstrap"></i> Artesanos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./article-tw.html"
+            ><i class="fa-brands fa-tailwind-css"></i> La jornada</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./speakers-tw.html"
+            ><i class="fa-brands fa-tailwind-css"></i> Artesanos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contestants-ai.html"
+            ><i class="fa-solid fa-robot"></i> Concursantes</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <ul
+      class="navbar-nav col-12 col-lg d-flex flex-row gap-2 justify-content-center justify-content-lg-end"
+    >
+      <a class="text-secondary" href="#"
+        ><i class="fa-brands fa-instagram"></i
+      ></a>
+      <a class="text-secondary" href="#"
+        ><i class="fa-brands fa-facebook"></i
+      ></a>
+      <a class="text-secondary" href="#"
+        ><i class="fa-brands fa-x-twitter"></i
+      ></a>
+    </ul>
+  </div>
+</div>

@@ -13,7 +13,9 @@
     <title>Artesanos — Jornadas de Artesanía de Sabero</title>
   </head>
   <body class="speakers">
-    <include src="./views/header-bs.html"></include>
+    <header class="border-bottom border-2 border-secondary">
+      <include src="./views/header-bs.html"></include>
+    </header>
 
     <main class="speakers-page">
       <div class="container">
@@ -428,6 +430,7 @@
               type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
+      <include src="./views/footer-bs.html"></include>
             >
               Cerrar
             </button>
@@ -436,7 +439,10 @@
       </div>
     </div>
 
-    <include src="./views/footer-bs.html"></include>
+    <footer>
+      <include src="./views/footer-bs.html"></include>
+    </footer>
+
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->
   </body>
