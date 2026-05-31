@@ -2,9 +2,11 @@
   # Logo styles
 \*------------------------------------*/
 
+@use "../abstracts/variables" as *;
+
 .logo {
-  display: block;
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+  &__border {
+    width: 3rem;
+    height: 3rem;
+  }
 }
