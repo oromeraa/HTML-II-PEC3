@@ -1,55 +1,54 @@
-<header>
-  <nav class="navbar navbar-expand-md fixed-top bg-light">
+<header class="mr-5 ml-5">
+  <nav class="navbar navbar-expand-md bg-light">
     <div class="container-fluid">
-      <a
-        class="logo d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
-        href="./home.html"
-      >
-        <img
-          class="logo__image border-2 border-dark rounded-circle"
-          src="./assets/images/Escudo_de_Sabero.svg"
-          alt="Logo Jornada de Artesanía de Sabero"
-        />
-        <span class="logo__text fs-4 ms-2">Artesanía de Sabero</span>
-      </a>
+      <!-- Logo -->
+      <include src="./components/logo.html"></include>
 
-      <div class="d-flex align-items-center">
-        <button
-          class="navbar-toggler collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link" href="./article-bs.html"
-                ><i class="fa-brands fa-bootstrap"></i> La jornada</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./speakers-bs.html"
-                ><i class="fa-brands fa-bootstrap"></i> Artesanos</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./article-tw.html"
-                ><i class="fa-brands fa-tailwind-css"></i> La jornada</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./speakers-tw.html"
-                ><i class="fa-brands fa-tailwind-css"></i> Artesanos</a
-              >
-            </li>
-          </ul>
-        </div>
+      <!-- Botón de colapso -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú de navegación -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="./article-bs.html"
+              ><i class="fa-brands fa-bootstrap"></i> La jornada</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./speakers-bs.html"
+              ><i class="fa-brands fa-bootstrap"></i> Artesanos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./article-tw.html"
+              ><i class="fa-brands fa-tailwind-css"></i> La jornada</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./speakers-tw.html"
+              ><i class="fa-brands fa-tailwind-css"></i> Artesanos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contestants-ai.html"
+              ><i class="fa-solid fa-robot"></i> Concursantes</a
+            >
+          </li>
+        </ul>
       </div>
+      <!-- .navbar-collapse -->
     </div>
+    <!-- .container-fluid -->
   </nav>
 </header>

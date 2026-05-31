@@ -10,8 +10,8 @@
 }
 
 @layer bootstrap {
-  @import "bootstrap/abstracts/bootstrap-overwrites";
   @import "/node_modules/bootstrap/scss/bootstrap";
+  @import "bootstrap/abstracts/bootstrap-overwrites";
 }
 
 @layer base {
@@ -25,6 +25,7 @@
 }
 
 @layer components {
+  @import "bootstrap/components/logo";
 }
 
 @layer pages {

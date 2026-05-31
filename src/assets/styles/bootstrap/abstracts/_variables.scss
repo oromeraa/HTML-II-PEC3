@@ -16,13 +16,6 @@ $sabero-gold: #eac102;
 $sabero-red: #ed1c24;
 $sabero-black: #000;
 
-// Colores derivados
-$navbar-bg: color.adjust($sabero-black, $alpha: -.1);
-$card-bg: color.adjust($sabero-black, $alpha: -.9);
-$shadow-color: color.adjust($sabero-black, $alpha: -.5);
-$color-primary: $sabero-green;
-$color-gray-mid: color.mix($sabero-black, $sabero-gray, 60%);
-
 // Bordes y radios
 $radius: 1rem;
 $border-radius-card: $radius;
