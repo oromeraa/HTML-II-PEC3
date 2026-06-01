@@ -4,8 +4,67 @@
 
 @use "../abstracts/variables" as *;
 
-.home header {
-  .logo__text {
-    color: $sabero-gray;
+.poster {
+  flex: 1;
+  min-height: 0;
+
+  container: poster / inline-size;
+
+  .poster__image img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .poster__content {
+    padding: 2rem;
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    .poster__image,
+    .poster__content {
+      grid-area: 1 / 1;
+    }
+
+    .poster__image img {
+      height: 100%;
+    }
+
+    .poster__content {
+      align-self: end;
+      color: $sabero-gray;
+    }
+  }
+}
+
+@container poster (min-width: 768px) {
+  .poster__title {
+    font-size: 3rem;
+  }
+}
+
+// Ajustes para el header en la home. Acotado a `header` para que NO afecte
+// al navbar del footer (que también es un .navbar dentro de .home-body).
+.home-body header {
+  .navbar {
+    :is(a, span) {
+      color: $sabero-gray;
+      text-shadow: 1px 1px 5px $sabero-black;
+    }
+
+    button i {
+      color: $sabero-black;
+    }
+  }
+
+  .navbar:has(.navbar-collapse.show) {
+    background-color: $sabero-gray;
+
+    :is(.nav-link, .logo__text, i, span) {
+      color: $sabero-black;
+      text-shadow: none;
+    }
   }
 }
