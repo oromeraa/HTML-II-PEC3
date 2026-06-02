@@ -45,8 +45,7 @@
   }
 }
 
-// Ajustes para el header en la home. Acotado a `header` para que NO afecte
-// al navbar del footer (que también es un .navbar dentro de .home-body).
+// Ajustes para el header en la home
 .home-body header {
   .navbar {
     :is(a, span) {

@@ -3,3 +3,24 @@
 \*------------------------------------*/
 
 @use "../abstracts/variables" as *;
+
+.card {
+  height: 100%; // todas las cards de una fila igualan altura
+  overflow: hidden; // recorta la foto al radio de la card
+
+  .card-img-top {
+    aspect-ratio: 1; // fotos cuadradas y uniformes
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; // el badge no se estira a todo el ancho
+    gap: 0.5rem;
+  }
+
+  .card-text {
+    color: rgba($sabero-black, 0.7);
+  }
+}

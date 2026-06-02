@@ -2,6 +2,10 @@
   # Functions
 \*------------------------------------*/
 
+@use "sass:math";
+
 @function card-basis($columns, $gap) {
-  @return calc(#{100% / $columns} - #{$gap * ($columns - 1) / $columns});
+  @return calc(
+    #{math.div(100%, $columns)} - #{math.div($gap * ($columns - 1), $columns)}
+  );
 }
