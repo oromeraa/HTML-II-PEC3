@@ -14,11 +14,12 @@
   container: speakers-grid / inline-size;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: $grid-gap;
 
   > .card {
-    // 3 columnas como máximo a partir de width de containers xl
-    flex: 1 1 basis-xl-max-cols(3);
+    // 3 columnas máximo a partir del contenedor xl, con grow 0 corregimos un defecto en algunos tamaños inferiores que agigantaba las cards
+    flex: 0 1 basis-xl-max-cols(3);
   }
 }
 
