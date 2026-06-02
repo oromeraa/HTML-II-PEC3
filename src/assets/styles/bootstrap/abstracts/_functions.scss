@@ -3,9 +3,25 @@
 \*------------------------------------*/
 
 @use "sass:math";
+@use "./variables" as *;
 
-@function card-basis($columns, $gap) {
-  @return calc(
-    #{math.div(100%, $columns)} - #{math.div($gap * ($columns - 1), $columns)}
-  );
+@function toRem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+@function basis-max-cols($cols, $max) {
+  $gap: $grid-gap;
+  @return math.div($max - ($cols - 1) * $gap, $cols);
+}
+
+@function basis-xxl-max-cols($cols) {
+  // .container xxl (1320px) − gutter (1.5rem)
+  $max-xxl: toRem(1320) - $grid-gap;
+  @return basis-max-cols($cols, $max-xxl);
+}
+
+@function basis-xl-max-cols($cols) {
+  // .container xl (1140px) − gutter (1.5rem)
+  $max-xl: toRem(1140) - $grid-gap;
+  @return basis-max-cols($cols, $max-xl);
 }

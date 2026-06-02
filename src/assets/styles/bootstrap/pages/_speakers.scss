@@ -5,27 +5,11 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/functions" as *;
 
-.speakers-page {
-  padding-block: 2.5rem 4rem;
-}
-
-.speakers-page__header {
-  margin-bottom: 2.5rem;
-  text-align: center;
-}
-
 .speakers-page__title {
   font-family: $font-leonesa;
+  letter-spacing: 0.3em;
 }
 
-.speakers-page__intro {
-  max-width: 50ch;
-  margin-inline: auto;
-  color: rgba($sabero-black, 0.65);
-}
-
-// Retícula maquetada con Flex (sin .row / .col-* de Bootstrap).
-// La propia retícula es el contenedor de las container queries.
 .speakers-grid {
   container: speakers-grid / inline-size;
   display: flex;
@@ -33,18 +17,17 @@
   gap: $grid-gap;
 
   > .card {
-    flex: 0 1 100%; // base (móvil): 1 columna
+    // 3 columnas como máximo a partir de width de containers xl
+    flex: 1 1 basis-xl-max-cols(3);
   }
 }
 
-@container speakers-grid (min-width: #{$cqSmall}) {
-  .speakers-grid > .card {
-    flex-basis: card-basis(2, $grid-gap); // 2 columnas
+@container speakers-grid (width > 48rem) {
+  .card {
+    flex-direction: row;
   }
-}
 
-@container speakers-grid (min-width: #{$cqMedium}) {
-  .speakers-grid > .card {
-    flex-basis: card-basis(3, $grid-gap); // 3 columnas
+  .card .card-img-top {
+    width: 40%;
   }
 }

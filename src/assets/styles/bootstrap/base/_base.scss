@@ -5,10 +5,18 @@
 @use "../abstracts/variables" as *;
 
 :root {
-  // font-family: $font-family-ubuntu;
+  font-family: $font-family-ubuntu;
 }
 
 body {
   color: $sabero-black;
   background-color: $sabero-gray;
+
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
