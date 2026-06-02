@@ -48,6 +48,14 @@
 // Ajustes para el header en la home
 .home-body header {
   .navbar {
+    // Gradiente de mismo color par acrear color sólido
+    background-image: linear-gradient($sabero-gray, $sabero-gray);
+    // Sin desplegar
+    background-size: 100% 0;
+    background-repeat: no-repeat;
+    background-position: top;
+    transition: background-size 0.35s ease-out;
+
     :is(a, span) {
       color: $sabero-gray;
       text-shadow: 1px 1px 5px $sabero-black;
@@ -58,8 +66,10 @@
     }
   }
 
-  .navbar:has(.navbar-collapse.show) {
-    background-color: $sabero-gray;
+  // Desplegamos fondo mientras se está abriendo y cuando ya está abierto
+  .navbar:has(.navbar-collapse:is(.show, .collapsing)) {
+    // Fondo desplegado
+    background-size: 100% 100%;
 
     :is(.nav-link, .logo__text, i, span) {
       color: $sabero-black;
