@@ -4,7 +4,13 @@
 
 @use "../abstracts/variables" as *;
 
-// Columna de lectura; la imagen va a todo el ancho del contenedor.
+:where(h1) {
+  font-family: $font-leonesa;
+  letter-spacing: 0.2rem;
+  line-height: 5rem;
+}
+
+// Columna de lectura
 .article-content > * {
   max-inline-size: 50rem;
   margin-inline: auto;
@@ -22,7 +28,7 @@
   background: linear-gradient(var(--sabero-black-25), var(--sabero-black-75));
 }
 
-// Intro a dos columnas mediante container query.
+// Intro a dos columnas
 .article-intro {
   container: article-intro / inline-size;
 }
@@ -35,7 +41,7 @@
   }
 }
 
-// Números de la lista dentro de un círculo.
+// Números de la lista dentro de un círculo
 .list-group-numbered > .list-group-item::before {
   content: counter(section);
   flex: 0 0 auto;

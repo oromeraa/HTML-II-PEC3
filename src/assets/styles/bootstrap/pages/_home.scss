@@ -7,39 +7,95 @@
 .poster {
   flex: 1;
   min-height: 0;
+  display: flex; // el inner llena toda la altura del póster
 
   container: poster / inline-size;
+}
+
+.poster__inner {
+  flex: 1;
+  min-block-size: 0;
 
   .poster__image img {
     width: 100%;
     object-fit: cover;
   }
 
-  .poster__content {
-    padding: 2rem;
+  // Cada texto sobre su propia plaquita translúcida: legible esté donde esté,
+  // sin oscurecer toda la foto.
+  .poster__title,
+  .poster__subtitle,
+  .poster__date {
+    width: fit-content;
+    margin: 1rem;
+    padding: 0.25rem 0.75rem;
+    color: $sabero-gray;
   }
 
+  // Mobile-first
   @supports (display: grid) {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr 2fr 1fr 1fr;
+    grid-template-areas:
+      "."
+      "title"
+      "subtitle"
+      "date";
 
-    .poster__image,
-    .poster__content {
-      grid-area: 1 / 1;
+    .poster__image {
+      grid-area: 1 / 1 / -1 / -1; // imagen de fondo, ocupa toda la rejilla
+
+      img {
+        height: 100%;
+      }
     }
 
-    .poster__image img {
-      height: 100%;
+    .poster__title {
+      grid-area: title;
     }
-
-    .poster__content {
-      align-self: end;
-      color: $sabero-gray;
+    .poster__subtitle {
+      grid-area: subtitle;
+    }
+    .poster__date {
+      grid-area: date;
     }
   }
 }
 
-@container poster (min-width: 768px) {
+// Tablet/desktop
+@container poster (min-width: #{$cqMedium}) {
+  .poster__inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas:
+      ".         .    "
+      "title     title"
+      "subtitle  date ";
+  }
+
+  .poster__date {
+    justify-self: end;
+  }
+}
+
+// Desktop grandes
+@container poster (min-width: #{$cqLarge}) {
+  .poster__inner {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      ".       .         .    "
+      "title   title     .    "
+      ".       subtitle  .    "
+      ".       .         date ";
+  }
+
+  .poster__subtitle {
+    justify-self: center;
+  }
+  .poster__date {
+    justify-self: end;
+  }
   .poster__title {
     font-size: 3rem;
   }
