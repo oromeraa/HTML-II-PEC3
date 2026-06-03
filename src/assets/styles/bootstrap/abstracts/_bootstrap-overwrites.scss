@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  # Bootstrap variable overrides
+\*------------------------------------*/
+
+@use "variables" as *;
+
+// Tipografía
+$font-family-sans-serif: $font-family-ubuntu;
+
+// badges con forma de pill
+$badge-border-radius: 50rem;
+
+// Colores del tema
+// $primary: $sabero-black;
+// $secondary: $sabero-gray;
+// $warning: $sabero-gold;
+// $danger: $sabero-red;

@@ -1,0 +1,31 @@
+/*------------------------------------*\
+  # Speakers page
+\*------------------------------------*/
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+
+.speakers-grid {
+  container: speakers-grid / inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $grid-gap;
+
+  > .card {
+    // 3 columnas desde xl. grow 1 para que llenen la fila
+    flex: 1 1 basis-xl-max-cols(3);
+    // pero con tope para que una card sola no sea gigante en tablet
+    max-width: basis-xxl-max-cols(3);
+  }
+}
+
+@container speakers-grid (width > #{$cqMedium}) {
+  .card {
+    flex-direction: row;
+  }
+
+  .card .card-img-top {
+    width: 50%;
+  }
+}

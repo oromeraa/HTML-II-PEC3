@@ -1,0 +1,38 @@
+/*------------------------------------*\
+  # Common styles
+\*------------------------------------*/
+
+@use "../abstracts/variables" as *;
+
+:root {
+  font-family: $font-family-ubuntu;
+
+  // Paleta derivada con funciones de color del módulo 3 (runtime).
+  // Transparencias con sintaxis de color relativo (from); tonos con color-mix().
+  --sabero-black-25: rgb(from #{$sabero-black} r g b / 25%);
+  --sabero-black-50: rgb(from #{$sabero-black} r g b / 50%);
+  --sabero-black-75: rgb(from #{$sabero-black} r g b / 75%);
+  --sabero-gold-dark: color-mix(in oklch, #{$sabero-gold}, black 18%);
+  --sabero-blue-dark: color-mix(in oklch, #{$sabero-blue}, black 20%);
+}
+
+body {
+  display: flex;
+
+  min-height: 100dvh;
+  color: $sabero-black;
+  background-color: $sabero-gray;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1 {
+  font-family: $font-leonesa;
+  // ajusatmos los títulos para no crecer demasiado y que sea legible
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  line-height: 2.5;
+  letter-spacing: .3em;
+}
