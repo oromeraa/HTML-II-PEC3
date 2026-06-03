@@ -21,21 +21,35 @@
     object-fit: cover;
   }
 
-  // Cada texto sobre su propia plaquita translúcida: legible esté donde esté,
-  // sin oscurecer toda la foto.
+  // Texto claro con sombra
   .poster__title,
   .poster__subtitle,
   .poster__date {
     width: fit-content;
     margin: 1rem;
-    padding: 0.25rem 0.75rem;
     color: $sabero-gray;
+    text-shadow:
+      0 1px 2px var(--sabero-black-75),
+      0 0 8px var(--sabero-black-75);
+    z-index: 1; // por encima del degradado de la imagen
+  }
+
+  // Tipografía fluida con unidades de container (cqi): escala con el póster,
+  // cómoda en móvil y grande en pantallas grandes, sin saltos de breakpoint.
+  .poster__title {
+    font-size: clamp(2.75rem, 4cqi, 3.5rem);
+  }
+  .poster__subtitle {
+    font-size: clamp(1.4rem, 2cqi, 2rem);
+  }
+  .poster__date {
+    font-size: clamp(1.2rem, 1.5cqi, 1.5rem);
   }
 
   // Mobile-first
   @supports (display: grid) {
     display: grid;
-    grid-template-rows: 2fr 2fr 1fr 1fr;
+    grid-template-rows: 4fr 2fr 1fr 1fr;
     grid-template-areas:
       "."
       "title"
@@ -43,7 +57,22 @@
       "date";
 
     .poster__image {
+      position: relative;
       grid-area: 1 / 1 / -1 / -1; // imagen de fondo, ocupa toda la rejilla
+
+      // Degradado para legibilidad. Por defecto (móvil/tablet): de abajo arriba.
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          var(--sabero-black-75),
+          var(--sabero-black-75),
+          var(--sabero-black-25),
+          transparent
+        );
+      }
 
       img {
         height: 100%;
@@ -68,9 +97,9 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 1fr 1fr;
     grid-template-areas:
-      ".         .    "
-      "title     title"
-      "subtitle  date ";
+      ".        .    "
+      "title    title"
+      "subtitle date ";
   }
 
   .poster__date {
@@ -81,13 +110,13 @@
 // Desktop grandes
 @container poster (min-width: #{$cqLarge}) {
   .poster__inner {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1fr;
     grid-template-areas:
-      ".       .         .    "
-      "title   title     .    "
-      ".       subtitle  .    "
-      ".       .         date ";
+      ".     .        .    "
+      "title title    .    "
+      ".     subtitle .    "
+      ".     .        date ";
   }
 
   .poster__subtitle {
@@ -96,8 +125,16 @@
   .poster__date {
     justify-self: end;
   }
-  .poster__title {
-    font-size: 3rem;
+
+  // El texto va en diagonal → degradado diagonal: oscurece esquina superior
+  // izquierda (título) e inferior derecha (fecha), centro más claro.
+  .poster__inner .poster__image::after {
+    background: linear-gradient(
+      to top right,
+      var(--sabero-black-75),
+      var(--sabero-black-50),
+      transparent
+    );
   }
 }
 

@@ -4,12 +4,6 @@
 
 @use "../abstracts/variables" as *;
 
-:where(h1) {
-  font-family: $font-leonesa;
-  letter-spacing: 0.2rem;
-  line-height: 5rem;
-}
-
 // Columna de lectura
 .article-content > * {
   max-inline-size: 50rem;

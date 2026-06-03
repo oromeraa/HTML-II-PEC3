@@ -5,11 +5,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/functions" as *;
 
-.speakers-page__title {
-  font-family: $font-leonesa;
-  letter-spacing: 0.3em;
-}
-
 .speakers-grid {
   container: speakers-grid / inline-size;
   display: flex;
