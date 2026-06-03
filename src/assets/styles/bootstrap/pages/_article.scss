@@ -1,3 +1,71 @@
 /*------------------------------------*\
   # Article page
 \*------------------------------------*/
+
+@use "../abstracts/variables" as *;
+
+/* Todo el contenido va en un único container-xxl (la imagen lo ocupa entero).
+   Los bloques de texto se limitan a una columna de lectura centrada.
+   :where() => especificidad 0, para poder sobreescribirlo con utilidades. */
+:where(.article-text) {
+  max-inline-size: 50rem;
+  margin-inline: auto;
+}
+
+/* Hero a 100% de ancho: imagen con capa oscura y título centrado encima */
+.article-hero__media {
+  // La capa oscura solo se pinta si hay imagen que oscurecer (:has)
+  &:has(img)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.article-hero__img {
+  aspect-ratio: 16 / 9;
+  max-block-size: 80vh;
+  object-fit: cover;
+}
+
+.article-hero__content {
+  z-index: 1; // overlay
+
+  :is(h1, p) {
+    text-shadow: 0 0 6px $sabero-black;
+  }
+}
+
+/* Intro a dos columnas mediante container query */
+.article-intro {
+  container: article-intro / inline-size;
+}
+
+@container article-intro (min-width: 640px) {
+  .article-intro__grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    column-gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* Números de la lista del programa dentro de un círculo */
+.list-group-numbered > .list-group-item::before {
+  content: counter(section);
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  border: 2px solid $sabero-gold;
+  border-radius: 50%;
+  color: $sabero-black;
+  font-weight: 700;
+  line-height: 1;
+}
+
+blockquote {
+  font-size: 2rem;
+}

@@ -12,37 +12,43 @@
     <!-- do not remove this line! -->
     <title>La jornada — Jornadas de Artesanía de Sabero</title>
   </head>
-  <body>
-    <header class="">
+  <body class="article-body">
+    <header class="border-bottom border-2 border-secondary">
       <include src="./views/header-bs.html"></include>
     </header>
 
     <main class="article">
-      <div class="article__hero">
-        <figure class="article__hero-figure">
+      <!-- Hero a 100% de ancho, pegado al header -->
+      <div class="article-hero">
+        <div
+          class="article-hero__media position-relative text-white text-center"
+        >
           <img
             src="assets/images/hero-article.png"
             alt="Vista del taller de artesanía de Sabero"
-            class="article__hero-img"
+            class="article-hero__img w-100"
           />
-        </figure>
-        <div class="article__hero-content">
-          <h1 class="article__title">Tradición artesanal desde el s.XV</h1>
-          <div class="article__meta">
-            <p class="article__author">por Omar Romera</p>
+          <div
+            class="article-hero__content position-absolute top-50 start-50 translate-middle w-100 px-3"
+          >
+            <h1 class="display-5 fw-bold mb-2">
+              Tradición artesanal desde el s.XV
+            </h1>
+            <p class="mb-0 fs-5">por Omar Romera</p>
           </div>
         </div>
       </div>
 
-      <div class="article__body">
-        <article class="article__body-content">
-          <div class="article__intro">
-            <p class="article__intro-tldr">
+      <div class="container-xxl pt-4 pt-lg-5 pb-5">
+        <!-- Intro a dos columnas -->
+        <div class="article-intro article-text mb-4">
+          <div class="article-intro__grid">
+            <p class="article-intro__lead h4 fw-bold lh-base mb-0">
               Muy lejos, más allá de las montañas de palabras, alejados de los
               países de las vocales y las consonantes, viven los textos
               simulados en casas de letras.
             </p>
-            <div class="article__intro-body">
+            <div class="article-intro__body">
               <p>
                 Un riachuelo llamado Pons fluye por su pueblo y los abastece con
                 las normas necesarias. Es un país paraisomático en el que a uno
@@ -59,53 +65,60 @@
               </p>
             </div>
           </div>
+        </div>
 
-          <hr class="article__divider" />
-
-          <ol class="article__list">
-            <li>
-              <strong class="article__item-title">Charlas magistrales</strong>
+        <!-- Lista numerada -->
+        <ol
+          class="list-group list-group-numbered list-group-flush article-text my-4 border-top border-bottom border-2 border-secondary py-3"
+        >
+          <li
+            class="list-group-item border-0 px-0 bg-transparent d-flex align-items-start gap-3"
+          >
+            <div>
+              <h2 class="h5 mb-1">Charlas magistrales</h2>
               <p>
                 Cuando las montañas de palabras se alejan de las vocales y las
                 consonantes, los textos simulados encuentran su lugar entre
                 frases asadas y signos de puntuación domesticados.
               </p>
-            </li>
-            <li>
-              <strong class="article__item-title">Talleres prácticos</strong>
+            </div>
+          </li>
+          <li
+            class="list-group-item border-0 px-0 bg-transparent d-flex align-items-start gap-3"
+          >
+            <div>
+              <h2 class="h5 mb-1">Talleres prácticos</h2>
               <p>
                 El gran Oxmox advirtió que las tierras más allá del río Pons
                 estaban llenas de comas salvajes, pero los textos decidieron
                 emprender el viaje con sus siete versales y su inicial al
                 cinturón.
               </p>
-            </li>
-            <li>
-              <strong class="article__item-title">Feria de artesanos</strong>
+            </div>
+          </li>
+          <li
+            class="list-group-item border-0 px-0 bg-transparent d-flex align-items-start gap-3"
+          >
+            <div>
+              <h2 class="h5 mb-1">Feria de artesanos</h2>
               <p>
                 Separados vivían en Marcooksgrove, justo a la costa de la
                 semántica, un gran océano lingüístico. Una pregunta retórica se
                 le pasó por la mente y le puso melancólico.
               </p>
-            </li>
-          </ol>
+            </div>
+          </li>
+        </ol>
 
-          <hr class="article__divider" />
+        <!-- Cita -->
+        <blockquote class="article-text blockquote">
+          <p>
+            Muy lejos, más allá de las montañas de palabras, alejados de los
+            países de las vocales y las consonantes, viven los textos simulados.
+          </p>
+        </blockquote>
 
-          <figure class="article__blockquote-wrapper">
-            <blockquote class="article__blockquote">
-              <p>
-                Muy lejos, más allá de las montañas de palabras, alejados de los
-                países de las vocales y las consonantes, viven los textos
-                simulados. Viven aislados en casas de letras, en la costa de la
-                semántica, un gran océano de lenguas.
-              </p>
-            </blockquote>
-            <figcaption class="article__blockquote-author">
-              -- María López, ceramista y ponente invitada
-            </figcaption>
-          </figure>
-
+        <div class="article-text">
           <p>
             Empacó sus siete versales, enfundó su inicial en el cinturón y se
             puso en camino. Cuando ya había escalado las primeras colinas de las
@@ -119,20 +132,36 @@
             donde dicen que ningún párrafo queda incompleto y cada frase halla
             su punto final.
           </p>
+        </div>
 
+        <!-- Imagen del articulo-->
+        <figure class="figure d-block w-100 my-4 my-lg-5">
           <img
             src="assets/images/artisan-pottery.jpg"
             alt="Taller de cerámica en la edición anterior"
-            class="article__img"
+            class="figure-img img-fluid rounded w-100 mb-0"
           />
+        </figure>
+
+        <div class="article-text">
+          <p>
+            Muy lejos, más allá de las montañas de palabras, alejados de los
+            países de las vocales y las consonantes, viven los textos simulados.
+          </p>
 
           <p>
-            Viven aislados en casas de letras, en la costa de la semántica. Un
-            riachuelo llamado Pons fluye por su pueblo y los abastece con las
-            normas necesarias. Es un país paraisomático en el que a uno le caen
-            pedazos de frases asadas en la boca.
+            Viven aislados en casas de letras, en la costa de la semántica, un
+            gran océano de lenguas. Un riachuelo llamado Pons fluye por su
+            pueblo y los abastece con las normas necesarias.
           </p>
-        </article>
+
+          <p class="mb-0">
+            Hablamos de un país paraisomático en el que a uno le caen pedazos de
+            frases asadas en la boca. Ni siquiera los todopoderosos signos de
+            puntuación dominan a los textos simulados; una vida, se puede decir,
+            poco ortográfica.
+          </p>
+        </div>
       </div>
     </main>
 
