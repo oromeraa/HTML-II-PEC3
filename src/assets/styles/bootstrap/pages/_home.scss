@@ -29,9 +29,7 @@
     width: fit-content;
     margin: 1rem;
     color: $sabero-gray;
-    text-shadow:
-      0 1px 2px var(--sabero-black-75),
-      0 0 8px var(--sabero-black-75);
+    text-shadow: 0 0 8px var(--sabero-black-75);
   }
 
   // Tipografía fluida con unidades de container (cqi): escala con el póster,
@@ -50,8 +48,7 @@
   @supports (display: grid) {
     display: grid;
     grid-template-rows: 4fr 2fr 1fr 1fr;
-    grid-template-areas:
-      "."
+    grid-template-areas: "."
       "title"
       "subtitle"
       "date";
@@ -96,8 +93,7 @@
   .poster__inner {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 1fr 1fr;
-    grid-template-areas:
-      ".        .    "
+    grid-template-areas: ".        .    "
       "title    title"
       "subtitle date ";
   }
@@ -112,8 +108,7 @@
   .poster__inner {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 3fr 1fr 1fr 1fr;
-    grid-template-areas:
-      ".     .        .    "
+    grid-template-areas: ".     .        .    "
       "title title    .    "
       ".     subtitle .    "
       ".     .        date ";
@@ -147,7 +142,7 @@
     background-repeat: no-repeat;
     // Sin desplegar
     background-size: 100% 0;
-    transition: background-size 0.35s ease-out;
+    transition: background-size .35s ease-out;
 
     :is(a, span) {
       color: $sabero-gray;
