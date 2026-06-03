@@ -18,8 +18,10 @@
   gap: $grid-gap;
 
   > .card {
-    // 3 columnas máximo a partir del contenedor xl, con grow 0 corregimos un defecto en algunos tamaños inferiores que agigantaba las cards
-    flex: 0 1 basis-xl-max-cols(3);
+    // Base: 3 columnas desde xl. grow 1 para que llenen la fila,
+    flex: 1 1 basis-xl-max-cols(3);
+    // pero con tope para que una card sola no se agigante. (en tablet)
+    max-width: basis-xxl-max-cols(3);
   }
 }
 
@@ -29,6 +31,6 @@
   }
 
   .card .card-img-top {
-    width: 40%;
+    width: 50%;
   }
 }
