@@ -5,9 +5,9 @@
 @use "../abstracts/variables" as *;
 
 .poster {
-  flex: 1;
-  min-height: 0;
   display: flex; // el inner llena toda la altura del póster
+  min-height: 0;
+  flex: 1;
 
   container: poster / inline-size;
 }
@@ -25,13 +25,13 @@
   .poster__title,
   .poster__subtitle,
   .poster__date {
+    z-index: 1; // por encima del degradado de la imagen
     width: fit-content;
     margin: 1rem;
     color: $sabero-gray;
     text-shadow:
       0 1px 2px var(--sabero-black-75),
       0 0 8px var(--sabero-black-75);
-    z-index: 1; // por encima del degradado de la imagen
   }
 
   // Tipografía fluida con unidades de container (cqi): escala con el póster,
@@ -62,9 +62,7 @@
 
       // Degradado para legibilidad. Por defecto (móvil/tablet): de abajo arriba.
       &::after {
-        content: "";
         position: absolute;
-        inset: 0;
         background: linear-gradient(
           to top,
           var(--sabero-black-75),
@@ -72,6 +70,8 @@
           var(--sabero-black-25),
           transparent
         );
+        content: "";
+        inset: 0;
       }
 
       img {
@@ -143,10 +143,10 @@
   .navbar {
     // Gradiente de mismo color par acrear color sólido
     background-image: linear-gradient($sabero-gray, $sabero-gray);
+    background-position: top;
+    background-repeat: no-repeat;
     // Sin desplegar
     background-size: 100% 0;
-    background-repeat: no-repeat;
-    background-position: top;
     transition: background-size 0.35s ease-out;
 
     :is(a, span) {

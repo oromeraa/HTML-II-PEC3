@@ -16,10 +16,10 @@
 
 // Capa oscura sobre la imagen del hero para que se lea el título mejor
 .article-hero__media::after {
-  content: "";
   position: absolute;
-  inset: 0;
   background: linear-gradient(var(--sabero-black-25), var(--sabero-black-75));
+  content: "";
+  inset: 0;
 }
 
 // Intro a dos columnas
@@ -37,12 +37,12 @@
 
 // Números de la lista dentro de un círculo
 .list-group-numbered > .list-group-item::before {
-  content: counter(section);
-  flex: 0 0 auto;
-  inline-size: 2rem;
+  font-weight: bold;
   line-height: 2rem;
   text-align: center;
   border: 2px solid var(--sabero-gold-dark);
   border-radius: 50%;
-  font-weight: bold;
+  content: counter(section);
+  flex: 0 0 auto;
+  inline-size: 2rem;
 }

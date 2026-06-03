@@ -1,6 +1,5 @@
 /**
- * Entry point for Bootstrap-based pages (home, speakers, article).
- * Do not include SCSS code in this file — only imports.
+ * Entry point for Bootstrap pages
  */
 
 @layer reset, bootstrap, base, layout, views, components, pages, utilities;

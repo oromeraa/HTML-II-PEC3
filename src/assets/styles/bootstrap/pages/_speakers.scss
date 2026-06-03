@@ -13,7 +13,7 @@
   gap: $grid-gap;
 
   > .card {
-    // Base: 3 columnas desde xl. grow 1 para que llenen la fila
+    // 3 columnas desde xl. grow 1 para que llenen la fila
     flex: 1 1 basis-xl-max-cols(3);
     // pero con tope para que una card sola no sea gigante en tablet
     max-width: basis-xxl-max-cols(3);

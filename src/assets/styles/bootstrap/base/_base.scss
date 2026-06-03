@@ -17,11 +17,11 @@
 }
 
 body {
-  color: $sabero-black;
-  background-color: $sabero-gray;
+  display: flex;
 
   min-height: 100dvh;
-  display: flex;
+  color: $sabero-black;
+  background-color: $sabero-gray;
   flex-direction: column;
 }
 
@@ -30,9 +30,9 @@ main {
 }
 
 h1 {
+  font-family: $font-leonesa;
   // ajusatmos los títulos para no crecer demasiado y que sea legible
   font-size: clamp(1rem, 4vw, 2.5rem);
-  font-family: $font-leonesa;
-  letter-spacing: 0.3em;
   line-height: 2.5;
+  letter-spacing: .3em;
 }

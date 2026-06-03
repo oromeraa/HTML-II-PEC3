@@ -20,10 +20,11 @@ $sabero-black: #000;
 $radius: 1rem;
 $border-radius-card: $radius;
 
-// Espaciado de retículas
+// Espaciado de grids
 $grid-gap: 1.5rem;
 
-// Breakpoint clásico (cabecera)
+// Breakpoint de media queries
+$mqMinMobile: 480px;
 $mqMinTablet: 768px;
 
 // Breakpoints de container queries
