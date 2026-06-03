@@ -6,6 +6,14 @@
 
 :root {
   font-family: $font-family-ubuntu;
+
+  // Paleta derivada con funciones de color del módulo 3 (runtime).
+  // Transparencias con sintaxis de color relativo (from); tonos con color-mix().
+  --sabero-black-25: rgb(from #{$sabero-black} r g b / 25%);
+  --sabero-black-50: rgb(from #{$sabero-black} r g b / 50%);
+  --sabero-black-75: rgb(from #{$sabero-black} r g b / 75%);
+  --sabero-gold-dark: color-mix(in oklch, #{$sabero-gold}, black 18%);
+  --sabero-blue-dark: color-mix(in oklch, #{$sabero-blue}, black 20%);
 }
 
 body {
