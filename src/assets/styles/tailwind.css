@@ -22,15 +22,6 @@
   /* Radios */
   --radius-card: 0.5rem;
   --radius-pill: 2rem;
-
-  /* Breakpoints de container queries */
-  --container-cqsmall: 600px;
-  --container-cqmedium: 900px;
-  --container-cqlarge: 1400px;
-
-  /* Medidas de la tarjeta sacado directamente de bootstrap */
-  --container-card: 22.25rem; /* basis-xl-max-cols(3) */
-  --container-card-max: 26rem; /* basis-xxl-max-cols(3) */
 }
 
 /* Tipografía custom */
