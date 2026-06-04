@@ -1,20 +1,17 @@
-/**
- * Tailwind component extracts via @apply.
- * Minimum 3 classes required by PEC3.
- *
- * Examples to fill in once the utility-first pages are built:
- *
- * @layer components {
- *   .btn-sabero {
- *     @apply inline-flex items-center px-4 py-2 rounded-pill bg-sabero-green text-white font-semibold transition;
- *   }
- *
- *   .section-title {
- *     @apply font-leonesa text-4xl text-sabero-green mb-2;
- *   }
- *
- *   .card-sabero {
- *     @apply flex flex-col overflow-hidden rounded-card border border-sabero-gray bg-black/10 transition;
- *   }
- * }
- */
+@layer components {
+  .section-title {
+    @apply font-leonesa text-sabero-black tracking-[0.3em];
+  }
+
+  .card-speaker {
+    @apply flex flex-col overflow-hidden rounded-card border border-sabero-gray bg-white;
+  }
+
+  .badge-field {
+    @apply inline-block self-start rounded-pill bg-gray-600 px-3 py-1 text-sm font-semibold text-white;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center gap-1 text-gray-500 no-underline hover:text-sabero-black;
+  }
+}

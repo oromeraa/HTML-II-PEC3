@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/styles/tailwind.css"
+    />
+    <!-- do not remove this line! -->
+    <title>Artesanos — Jornadas de Artesanía de Sabero</title>
+  </head>
+  <body class="flex min-h-dvh flex-col bg-sabero-gray font-sans text-sabero-black">
+    <header>
+      <include src="./views/header-tw.html"></include>
+    </header>
+
+    <main class="grow">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="py-12 text-center">
+          <h1 class="section-title my-8 text-5xl">Artesanos</h1>
+          <p class="text-lg text-sabero-black/70">
+            Muy lejos, más allá de las montañas de palabras.
+          </p>
+        </div>
+
+        <div
+          class="mx-auto grid max-w-md grid-cols-1 gap-6 pb-12 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3"
+        >
+          <include
+              src="./components/speaker-card-tw.html"
+              locals='{
+              "name":"María López",
+              "photo":"https://placeholdpicsum.dev/photo/id/665/400",
+              "bio":"Más allá de las montañas de palabras, modela el barro con un oficio heredado de generación en generación.",
+              "field":"Cerámica"
+            }'
+          ></include>
+
+          <include
+            src="./components/speaker-card-tw.html"
+            locals='{
+              "name":"Jordi Mas",
+              "photo":"https://placeholdpicsum.dev/photo/id/670/400",
+              "bio":"Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes.",
+              "field":"Metal"
+            }'
+          ></include>
+
+          <include
+            src="./components/speaker-card-tw.html"
+            locals='{
+              "name":"Sara Puig",
+              "photo":"https://placeholdpicsum.dev/photo/id/664/400",
+              "bio":"Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes.",
+              "field":"Textil"
+            }'
+          ></include>
+
+          <include
+            src="./components/speaker-card-tw.html"
+            locals='{
+              "name":"Àlex Ferrer",
+              "photo":"https://placeholdpicsum.dev/photo/id/688/400",
+              "bio":"Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes.",
+              "field":"Mimbre"
+            }'
+          ></include>
+
+          <include
+            src="./components/speaker-card-tw.html"
+            locals='{
+              "name":"Núria Vila",
+              "photo":"https://placeholdpicsum.dev/photo/id/667/400",
+              "bio":"Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes.",
+              "field":"Vidrio"
+            }'
+          ></include>
+
+          <include
+            src="./components/speaker-card-tw.html"
+            locals='{
+              "name":"Pau Roca",
+              "photo":"https://placeholdpicsum.dev/photo/id/663/400",
+              "bio":"Muy lejos, más allá de las montañas de palabras, alejados de los países de las vocales y las consonantes.",
+              "field":"Madera"
+            }'
+          ></include>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <include src="./views/footer-tw.html"></include>
+    </footer>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>
