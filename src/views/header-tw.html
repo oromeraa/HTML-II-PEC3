@@ -1,47 +1,44 @@
-<nav class="">
-  <div class="">
+<nav class="border-b-2 border-neutral-500 bg-white">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
     <!-- Logo -->
     <include src="./components/logo-tw.html"></include>
 
-    <!-- Botón de colapso -->
+    <!-- Botón hamburguesa: solo móvil (sin JS, demostrativo según enunciado) -->
     <button
-      class=""
+      class="rounded-md border border-gray-400 bg-gray-100 px-3 py-2 text-xl text-sabero-black lg:hidden"
       type="button"
+      aria-label="Abrir menú"
     >
       <i class="fa-solid fa-bars"></i>
     </button>
 
-    <!-- Menú de navegación -->
-    <div class="">
-      <ul class="">
-        <li class="">
-          <a class="" href="./article-bs.html"
-            ><i class="fa-brands fa-bootstrap"></i> La jornada</a
-          >
-        </li>
-        <li class="">
-          <a class="" href="./speakers-bs.html"
-            ><i class="fa-brands fa-bootstrap"></i> Artesanos</a
-          >
-        </li>
-        <li class="">
-          <a class="" href="./article-tw.html"
-            ><i class="fa-brands fa-tailwind-css"></i> La jornada</a
-          >
-        </li>
-        <li class="">
-          <a class="" href="./speakers-tw.html"
-            ><i class="fa-brands fa-tailwind-css"></i> Artesanos</a
-          >
-        </li>
-        <li class="">
-          <a class="" href="./contestants-ai.html"
-            ><i class="fa-solid fa-robot"></i> Concursantes</a
-          >
-        </li>
-      </ul>
-    </div>
-    <!-- .navbar-collapse -->
+    <!-- Menú de navegación: oculto en móvil, visible en escritorio -->
+    <ul class="hidden items-center gap-6 lg:flex">
+      <li>
+        <a class="nav-link" href="./article-bs.html"
+          ><i class="fa-brands fa-bootstrap"></i> La jornada</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" href="./speakers-bs.html"
+          ><i class="fa-brands fa-bootstrap"></i> Artesanos</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" href="./article-tw.html"
+          ><i class="fa-brands fa-tailwind-css"></i> La jornada</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" href="./speakers-tw.html"
+          ><i class="fa-brands fa-tailwind-css"></i> Artesanos</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" href="./contestants-ai.html"
+          ><i class="fa-solid fa-robot"></i> Concursantes</a
+        >
+      </li>
+    </ul>
   </div>
-  <!-- .container-fluid -->
 </nav>
