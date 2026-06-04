@@ -1,0 +1,167 @@
+/*------------------------------------*\
+  # Home page
+\*------------------------------------*/
+
+@use "../abstracts/variables" as *;
+
+.poster {
+  display: flex; // el inner llena toda la altura del póster
+  min-height: 0;
+  flex: 1;
+
+  container: poster / inline-size;
+}
+
+.poster__inner {
+  flex: 1;
+  min-block-size: 0;
+
+  .poster__image img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  // Texto claro con sombra
+  .poster__title,
+  .poster__subtitle,
+  .poster__date {
+    z-index: 1; // por encima del degradado de la imagen
+    width: fit-content;
+    margin: 1rem;
+    color: $sabero-gray;
+    text-shadow: 0 0 8px var(--sabero-black-75);
+  }
+
+  // Tipografía fluida con unidades de container (cqi): escala con el póster,
+  // cómoda en móvil y grande en pantallas grandes, sin saltos de breakpoint.
+  .poster__title {
+    font-size: clamp(2.75rem, 4cqi, 3.5rem);
+  }
+  .poster__subtitle {
+    font-size: clamp(1.4rem, 2cqi, 2rem);
+  }
+  .poster__date {
+    font-size: clamp(1.2rem, 1.5cqi, 1.5rem);
+  }
+
+  // Mobile-first
+  @supports (display: grid) {
+    display: grid;
+    grid-template-rows: 4fr 2fr 1fr 1fr;
+    grid-template-areas: "."
+      "title"
+      "subtitle"
+      "date";
+
+    .poster__image {
+      position: relative;
+      grid-area: 1 / 1 / -1 / -1; // imagen de fondo, ocupa toda la rejilla
+
+      // Degradado para legibilidad. Por defecto (móvil/tablet): de abajo arriba.
+      &::after {
+        position: absolute;
+        background: linear-gradient(
+          to top,
+          var(--sabero-black-75),
+          var(--sabero-black-75),
+          var(--sabero-black-25),
+          transparent
+        );
+        content: "";
+        inset: 0;
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .poster__title {
+      grid-area: title;
+    }
+    .poster__subtitle {
+      grid-area: subtitle;
+    }
+    .poster__date {
+      grid-area: date;
+    }
+  }
+}
+
+// Tablet/desktop
+@container poster (min-width: #{$cqMedium}) {
+  .poster__inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas: ".        .    "
+      "title    title"
+      "subtitle date ";
+  }
+
+  .poster__date {
+    justify-self: end;
+  }
+}
+
+// Desktop grandes
+@container poster (min-width: #{$cqLarge}) {
+  .poster__inner {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1fr;
+    grid-template-areas: ".     .        .    "
+      "title title    .    "
+      ".     subtitle .    "
+      ".     .        date ";
+  }
+
+  .poster__subtitle {
+    justify-self: center;
+  }
+  .poster__date {
+    justify-self: end;
+  }
+
+  // El texto va en diagonal → degradado diagonal: oscurece esquina superior
+  // izquierda (título) e inferior derecha (fecha), centro más claro.
+  .poster__inner .poster__image::after {
+    background: linear-gradient(
+      to top right,
+      var(--sabero-black-75),
+      var(--sabero-black-50),
+      transparent
+    );
+  }
+}
+
+// Ajustes para el header en la home
+.home-body header {
+  .navbar {
+    // Gradiente de mismo color par acrear color sólido
+    background-image: linear-gradient($sabero-gray, $sabero-gray);
+    background-position: top;
+    background-repeat: no-repeat;
+    // Sin desplegar
+    background-size: 100% 0;
+    transition: background-size .35s ease-out;
+
+    :is(a, span) {
+      color: $sabero-gray;
+      text-shadow: 1px 1px 5px $sabero-black;
+    }
+
+    button i {
+      color: $sabero-black;
+    }
+  }
+
+  // Desplegamos fondo mientras se está abriendo y cuando ya está abierto
+  .navbar:has(.navbar-collapse:is(.show, .collapsing)) {
+    // Fondo desplegado
+    background-size: 100% 100%;
+
+    :is(.nav-link, .logo__text, i, span) {
+      color: $sabero-black;
+      text-shadow: none;
+    }
+  }
+}

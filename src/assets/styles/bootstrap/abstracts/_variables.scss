@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  # Global variables
+\*------------------------------------*/
+
+@use "sass:color";
+
+// Tipografía
+$font-family-ubuntu: "Ubuntu", sans-serif;
+$font-leonesa: "LeonesaCancilleresca", serif;
+
+// Paleta del escudo de Sabero
+$sabero-blue: #0071bc;
+$sabero-green: #008f4c;
+$sabero-gray: #e5e5e5;
+$sabero-gold: #eac102;
+$sabero-red: #ed1c24;
+$sabero-black: #000;
+
+// Bordes y radios
+$radius: 1rem;
+$border-radius-card: $radius;
+
+// Espaciado de grids
+$grid-gap: 1.5rem;
+
+// Breakpoint de media queries
+$mqMinMobile: 480px;
+$mqMinTablet: 768px;
+
+// Breakpoints de container queries
+$cqSmall: 600px;
+$cqMedium: 900px;
+$cqLarge: 1400px;
+$cqCardNarrow: 240px;
+$cqCardWide: 400px;

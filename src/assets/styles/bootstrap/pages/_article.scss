@@ -1,0 +1,48 @@
+/*------------------------------------*\
+  # Article page
+\*------------------------------------*/
+
+@use "../abstracts/variables" as *;
+
+// Columna de lectura
+.article-content > * {
+  max-inline-size: 50rem;
+  margin-inline: auto;
+}
+
+.article-content > figure {
+  max-inline-size: none;
+}
+
+// Capa oscura sobre la imagen del hero para que se lea el título mejor
+.article-hero__media::after {
+  position: absolute;
+  background: linear-gradient(var(--sabero-black-25), var(--sabero-black-75));
+  content: "";
+  inset: 0;
+}
+
+// Intro a dos columnas
+.article-intro {
+  container: article-intro / inline-size;
+}
+
+@container article-intro (min-width: #{$cqSmall}) {
+  .article-intro__grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 2rem;
+  }
+}
+
+// Números de la lista dentro de un círculo
+.list-group-numbered > .list-group-item::before {
+  font-weight: bold;
+  line-height: 2rem;
+  text-align: center;
+  border: 2px solid var(--sabero-gold-dark);
+  border-radius: 50%;
+  content: counter(section);
+  flex: 0 0 auto;
+  inline-size: 2rem;
+}

@@ -1,0 +1,17 @@
+@layer components {
+  .section-title {
+    @apply font-leonesa text-sabero-black tracking-[0.3em];
+  }
+
+  .card-speaker {
+    @apply flex flex-col overflow-hidden rounded-card border border-sabero-gray bg-white;
+  }
+
+  .badge-field {
+    @apply inline-block self-start rounded-pill bg-gray-600 px-3 py-1 text-sm font-semibold text-white;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center gap-1 text-gray-500 no-underline hover:text-sabero-black;
+  }
+}

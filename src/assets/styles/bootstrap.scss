@@ -1,0 +1,35 @@
+/**
+ * Entry point for Bootstrap pages
+ */
+
+@layer reset, bootstrap, base, layout, views, components, pages, utilities;
+
+@layer reset {
+  @import "bootstrap/base/reset";
+}
+
+@layer bootstrap {
+  @import "bootstrap/abstracts/bootstrap-overwrites";
+  @import "/node_modules/bootstrap/scss/bootstrap";
+}
+
+@layer base {
+  @import "bootstrap/abstracts/fonts";
+  @import "bootstrap/base/base";
+}
+
+@layer views {
+  @import "bootstrap/views/header";
+  @import "bootstrap/views/footer";
+}
+
+@layer components {
+  @import "bootstrap/components/logo";
+  @import "bootstrap/components/speaker_card";
+}
+
+@layer pages {
+  @import "bootstrap/pages/home";
+  @import "bootstrap/pages/article";
+  @import "bootstrap/pages/speakers";
+}

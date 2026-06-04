@@ -1,0 +1,34 @@
+/**
+ * Entry point for Tailwind (v4) pages.
+ * Config CSS-first vía @theme (idiomático en v4, como enseña el temario M4-2).
+ */
+
+@import "tailwindcss";
+@import "./tailwind/components.css";
+
+@theme {
+  /* Paleta escudo Sabero */
+  --color-sabero-blue: #0071bc;
+  --color-sabero-green: #008f4c;
+  --color-sabero-gray: #e5e5e5;
+  --color-sabero-gold: #eac102;
+  --color-sabero-red: #ed1c24;
+  --color-sabero-black: #000000;
+
+  /* Tipografías */
+  --font-sans: "Ubuntu", sans-serif;
+  --font-leonesa: "LeonesaCancilleresca", serif;
+
+  /* Radios */
+  --radius-card: 0.5rem;
+  --radius-pill: 2rem;
+}
+
+/* Tipografía custom */
+@font-face {
+  font-family: "LeonesaCancilleresca";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/LeonesaCancilleresca.ttf") format("truetype");
+  font-display: swap;
+}

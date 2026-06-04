@@ -1,0 +1,14 @@
+/*------------------------------------*\
+  # Card styles
+\*------------------------------------*/
+
+@use "../abstracts/variables" as *;
+
+.card {
+  overflow: hidden; // recorta la foto al radio de la card
+
+  .card-img-top {
+    aspect-ratio: 1; // foto cuadrada y uniforme
+    object-fit: cover; // rellena sin deformar (recorta lo que sobra)
+  }
+}

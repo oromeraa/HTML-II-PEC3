@@ -1,0 +1,12 @@
+<div class="card-speaker flex-col lg:flex-row">
+  <img
+    src="{{ photo }}"
+    alt="Foto de {{ name }}"
+    class="aspect-square w-full shrink-0 object-cover lg:aspect-auto lg:w-1/2"
+  />
+  <div class="flex flex-col items-start gap-2 p-4">
+    <h2 class="m-0 text-xl font-bold">{{ name }}</h2>
+    <p class="m-0 text-sabero-black/70">{{ bio }}</p>
+    <span class="badge-field">{{ field }}</span>
+  </div>
+</div>
