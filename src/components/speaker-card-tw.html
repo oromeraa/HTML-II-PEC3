@@ -1,10 +1,10 @@
 <div
-  class="card-sabero w-full max-w-sm grow basis-72 @min-[900px]:max-w-none @min-[900px]:basis-[calc(50%-0.75rem)] @min-[900px]:flex-row"
+  class="card-sabero w-full flex-col @cqmedium:flex-row @cqmedium:w-auto @cqmedium:grow @cqmedium:basis-card @cqmedium:max-w-card-max"
 >
   <img
     src="{{ photo }}"
     alt="Foto de {{ name }}"
-    class="aspect-square w-full object-cover @min-[900px]:w-1/2"
+    class="aspect-square w-full shrink-0 object-cover @cqsmall:aspect-auto @cqsmall:w-1/2"
   />
   <div class="flex flex-col items-start gap-2 p-4">
     <h2 class="m-0 text-xl font-bold">{{ name }}</h2>
