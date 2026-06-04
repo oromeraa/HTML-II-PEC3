@@ -1,0 +1,41 @@
+# Configuración de despliegue en Netlify
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20.18.1"
+
+# La raíz sirve la portada: Parcel genera home.html (no index.html),
+# así que reescribimos / -> /home.html manteniendo la URL raíz.
+[[redirects]]
+  from = "/"
+  to = "/home.html"
+  status = 200
+
+# URLs "bonitas" sin .html (opcional; el nav ya enlaza con .html y funciona igual)
+[[redirects]]
+  from = "/article-bs"
+  to = "/article-bs.html"
+  status = 200
+
+[[redirects]]
+  from = "/speakers-bs"
+  to = "/speakers-bs.html"
+  status = 200
+
+[[redirects]]
+  from = "/article-tw"
+  to = "/article-tw.html"
+  status = 200
+
+[[redirects]]
+  from = "/speakers-tw"
+  to = "/speakers-tw.html"
+  status = 200
+
+[[redirects]]
+  from = "/contestants-ai"
+  to = "/contestants-ai.html"
+  status = 200
