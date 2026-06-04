@@ -3,7 +3,7 @@
     @apply font-leonesa text-sabero-black tracking-[0.3em];
   }
 
-  .card-sabero {
+  .card-speaker {
     @apply flex flex-col overflow-hidden rounded-card border border-sabero-gray bg-white;
   }
 
@@ -12,6 +12,6 @@
   }
 
   .nav-link {
-    @apply inline-flex items-center gap-1 text-gray-500 no-underline transition-colors hover:text-sabero-black;
+    @apply inline-flex items-center gap-1 text-gray-500 no-underline hover:text-sabero-black;
   }
 }
